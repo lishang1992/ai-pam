@@ -1,0 +1,14 @@
+# 虚拟环境
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# 运行时数据（SQLite 数据库与审计流水）
+data/
+
+# 系统 / 编辑器
+.DS_Store
+.idea/
+.vscode/
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 安全堡垒机 V1</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- 登录 -->
+  <div id="login" class="login-wrap hidden">
+    <form class="login-card" id="login-form">
+      <div class="login-brand">
+        <div class="logo">🛡</div>
+        <div>
+          <h1>AI 安全堡垒机</h1>
+          <p>企业 AI Agent 的特权访问控制入口</p>
+        </div>
+      </div>
+      <label>用户名<input id="username" autocomplete="username" placeholder="zhangsan" /></label>
+      <label>密码<input id="password" type="password" autocomplete="current-password" placeholder="ops123456" /></label>
+      <button type="submit" class="primary">登录</button>
+      <div class="login-hint">
+        <div><b>运维人员</b> zhangsan / ops123456</div>
+        <div><b>安全管理员</b> secadmin / sec123456</div>
+        <div><b>审计管理员</b> auditor / audit123456</div>
+      </div>
+      <div id="login-error" class="error"></div>
+    </form>
+  </div>
+
+  <!-- 主界面 -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🛡</span>
+        <div>
+          <div class="brand-title">AI 安全堡垒机</div>
+          <div class="brand-sub">AIBastion V1</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span>📊</span>安全看板</a>
+        <a href="#/console" data-route="console"><span>🤖</span>AI 运维工作台</a>
+        <a href="#/sessions" data-route="sessions"><span>🖥</span>实时会话</a>
+        <a href="#/assets" data-route="assets"><span>🗄</span>资产管理</a>
+        <a href="#/agents" data-route="agents"><span>🧩</span>Agent 管理</a>
+        <a href="#/policies" data-route="policies"><span>📜</span>策略管理</a>
+        <a href="#/audit" data-route="audit"><span>🔍</span>审计中心</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="btn-reset" class="ghost small">↺ 重置演示环境</button>
+        <div class="mode-tag" id="scope-tag">数据范围：-</div>
+        <div class="mode-tag" id="mode-tag">演示模式</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-title" id="page-title">安全看板</div>
+        <div class="topbar-right">
+          <span class="pill" id="user-pill">-</span>
+          <button id="btn-logout" class="ghost small">退出</button>
+        </div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <div id="toasts" class="toasts"></div>
+  <div id="modal" class="modal-wrap hidden"><div class="modal" id="modal-body"></div></div>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

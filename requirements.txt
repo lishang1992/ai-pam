@@ -1,0 +1,11 @@
+# AI 堡垒机 V1 —— 后端依赖（Windows / macOS / Linux 通用）
+# 安装： pip install -r requirements.txt
+
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.27
+pydantic>=2.6,<3.0
+httpx>=0.26
+PyYAML>=6.0
+# 纳管真实 Linux 主机时使用（口令 / 私钥均支持）。
+# 若 pip 试图从源码编译，请改用： pip install --only-binary=:all: paramiko
+paramiko>=3.4
